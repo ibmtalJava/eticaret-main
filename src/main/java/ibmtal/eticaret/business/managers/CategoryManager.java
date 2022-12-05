@@ -27,6 +27,15 @@ public class CategoryManager implements CategoryService {
 		if(category.getName().isEmpty()) {
 			result.newError("name","Boş Geçilemez");
 		}
+		if(category.getName().length()>50) {
+			result.newError("name", "50 Karakterden fazla olamaz");
+		}
+		if(category.getShortName().isEmpty()) {
+			result.newError("shortName", " Boş Geçilemez");
+		}
+		if(category.getShortName().length()>5) {
+			result.newError("shortName","En fazla 5 Karakter olabilir");
+		}
 		
 		if(result.isSuccess()) {
 			this.categoryDao.save(category);
