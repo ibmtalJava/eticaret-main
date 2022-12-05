@@ -18,7 +18,7 @@ public class Color {
 	private String name;
 	@Column(name="rating")
 	private int rating;
-	public Color() {
+	public Color(){
 		super();
 	}
 	public Color(int id, String name, int rating) {
